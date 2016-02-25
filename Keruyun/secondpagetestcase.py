@@ -17,11 +17,11 @@ class secondpagetestcase(unittest.TestCase):
         try:
             self.browser.find_element_by_xpath("//input[@id='kddd']").send_keys('u逗比')
         except:
-            self.browser.get_screenshot_as_file('D:\selenium\keruyun\错误图片\baidusearch.png')
+            self.browser.get_screenshot_as_file('D:\\selenium\\keruyun\\错误图片\\baidusearch.png')
 
 
     def tearDown(self):
-        print '第二界面 测试完成............END.........................'
+        print '主界面 测试完成............END.........................'
         self.browser.close()
 if __name__=='__main__':
     unittest.main()
