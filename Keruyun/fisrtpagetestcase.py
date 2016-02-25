@@ -1,5 +1,5 @@
+#coding=utf-8
 __author__ = 'Junior'
-#coding:utf-8
 import unittest
 
 from selenium import webdriver

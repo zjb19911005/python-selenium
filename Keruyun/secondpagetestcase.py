@@ -1,5 +1,5 @@
+#coding=utf-8
 __author__ = 'Junior'
-#coding:utf-8
 import unittest
 
 from selenium import webdriver
@@ -21,5 +21,7 @@ class secondpagetestcase(unittest.TestCase):
 
 
     def tearDown(self):
-        print '第二界面 测试完成............END.........................' \
+        print '第二界面 测试完成............END.........................'
         self.browser.close()
+if __name__=='__main__':
+    unittest.main()
