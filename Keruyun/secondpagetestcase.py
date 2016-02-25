@@ -17,7 +17,7 @@ class secondpagetestcase(unittest.TestCase):
         try:
             self.browser.find_element_by_xpath("//input[@id='kddd']").send_keys('u逗比')
         except:
-            self.browser.get_screenshot_as_file('D:\\selenium\\keruyun\\错误图片\\baidusearch.png')
+            self.browser.get_screenshot_as_file('D:\\selenium\\keruyun\\errorpic\\baidusearch.png')
 
 
     def tearDown(self):
