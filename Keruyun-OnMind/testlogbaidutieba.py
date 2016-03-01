@@ -2,7 +2,9 @@
 __author__ = 'Junior'
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from
 import time
+import sys
 browser=webdriver.Firefox()
 browser.maximize_window()
 browser.get("http://tieba.baidu.com/")
@@ -12,7 +14,7 @@ browser.implicitly_wait(5)
 allhandles=browser.window_handles
 print allhandles
 for handle in allhandles:
-    if handle!=nowhandle:
+    if handle != handle:
         browser.switch_to_window(handle)
         browser.find_element_by_xpath("input[@id='TANGRAM__PSP_8__userName']").send_keys('zjb19911005')
         browser.implicitly_wait(5)
@@ -20,4 +22,4 @@ for handle in allhandles:
         browser.implicitly_wait(5)
         browser.find_element_by_xpath("input[@id='TANGRAM__PSP_8__submit']").submit()
         browser.implicitly_wait(5)
-browser.switch_to_window(nowhandle)
+browser.switch_to_window(handle)
