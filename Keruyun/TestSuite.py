@@ -2,8 +2,8 @@
 __author__ = 'Junior'
 import unittest
 
-from fisrtpagetestcase import firstpagetest
-from secondpagetestcase import secondpagetestcase
+from Keruyun.fisrtpagetestcase import firstpagetest
+from Keruyun import secondpagetestcase
 
 
 def suite():
