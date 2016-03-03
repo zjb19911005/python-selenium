@@ -18,7 +18,7 @@ class firstpagetest(unittest.TestCase):
             self.browser.find_element_by_xpath("//input[@id='loginId']").send_keys(data(self))
             self.browser.implicitly_wait(5)
         except:
-            self.browser.get_screenshot_as_file('D:\\selenium\\keruyun\\错误图片\\loginId.png')
+            self.browser.get_screenshot_as_file('D:\\selenium\\keruyun\\errorpic\\loginId.png')
         self.browser.find_element_by_xpath("//input[@id='username']").send_keys('admin')
         self.browser.implicitly_wait(5)
         self.browser.find_element_by_xpath("//input[@id='password']").send_keys('a123456')
