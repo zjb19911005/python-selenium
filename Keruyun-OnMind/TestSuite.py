@@ -2,18 +2,18 @@
 __author__ = 'Junior'
 import unittest
 
-from Keruyun.loginpagetest import firstpagetest
-from Keruyun import secondpagetestcase
+from loginandlogout import First
+
 
 
 def suite():
-    return unittest.makeSuite(loginpagetestcase,'test')
-def suite2():
-    return unittest.makeSuite(secondpagetestcase,'test')
+    return unittest.makeSuite(First,'test')
+# def suite2():
+#     return unittest.makeSuite(secondpagetestcase,'test')
 if __name__=='__main__':
     runner=unittest.TextTestRunner()
     runner.run(suite())
-    runner.run(suite2())
+    # runner.run(suite2())
 
 
 '''import os
