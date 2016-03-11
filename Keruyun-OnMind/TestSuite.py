@@ -2,12 +2,13 @@
 __author__ = 'Junior'
 import unittest
 
-from loginandlogout import First
+from 登录与登出检查 import Logandlogout
+
 
 
 
 def suite():
-    return unittest.makeSuite(First,'test')
+    return unittest.makeSuite(Logandlogout,'test')
 # def suite2():
 #     return unittest.makeSuite(secondpagetestcase,'test')
 if __name__=='__main__':
