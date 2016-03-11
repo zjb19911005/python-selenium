@@ -7,7 +7,7 @@ from Keruyun import secondpagetestcase
 
 
 def suite():
-    return unittest.makeSuite(loginpagetest,'test')
+    return unittest.makeSuite(loginpagetestcase,'test')
 def suite2():
     return unittest.makeSuite(secondpagetestcase,'test')
 if __name__=='__main__':
