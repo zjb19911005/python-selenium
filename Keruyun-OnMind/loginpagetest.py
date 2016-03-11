@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-class logginpagetest(unittest.TestCase):
+class loginpagetest(unittest.TestCase):
     def setUp(self):
         print "开始 登陆主界面的测试 ..........Start .................."
         self.browser=webdriver.Firefox()
@@ -14,7 +14,7 @@ class logginpagetest(unittest.TestCase):
         print '现在将浏览器最大化'
         self.browser.set_window_size(800,800)#浏览器最大化用例
 
-    def test002turelogin(self):#正确账户登录
+    def test001turelogin(self):#正确账户登录
         self.browser.get(self.url+'/')
         self.browser.find_element_by_xpath("//input[@id='loginId']").clear()
         self.browser.implicitly_wait(10)
@@ -34,7 +34,6 @@ class logginpagetest(unittest.TestCase):
 
     def tearDown(self):
         print'完成登陆主界面的测试...........END............'
-        self.browser.implicitly_wait(10)
         self.browser.quit()
         self.browser.close()
 if __name__=='__main__':
