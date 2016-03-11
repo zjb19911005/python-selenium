@@ -2,12 +2,12 @@
 __author__ = 'Junior'
 import unittest
 
-from Keruyun.fisrtpagetestcase import firstpagetest
+from Keruyun.loginpagetest import firstpagetest
 from Keruyun import secondpagetestcase
 
 
 def suite():
-    return unittest.makeSuite(firstpagetest,'test')
+    return unittest.makeSuite(loginpagetestcase,'test')
 def suite2():
     return unittest.makeSuite(secondpagetestcase,'test')
 if __name__=='__main__':

@@ -9,9 +9,9 @@ print '开始操作登陆贴吧了'
 browser.find_element_by_xpath("//li[@class='u_login']").click()
 browser.implicitly_wait(3)
 
-browser.find_element_by_xpath("//input[@id='TANGRAM__PSP_8__userName']").send_keys('123456')
+#browser.find_element_by_xpath("//input[@id='TANGRAM__PSP_8__userName']").send_keys('123456')
 #username=browser.find_element_by_id('passport-login-pop').find_element_by_id('TANGRAM__PSP_8__userName')
-#browser.execute_script('$("TANGRAM__PSP_8__submit").click();')
+browser.execute_script('$("TANGRAM__PSP_8__submit").click();')
 
 
 
