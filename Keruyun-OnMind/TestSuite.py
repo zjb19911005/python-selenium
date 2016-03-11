@@ -1,21 +1,23 @@
-#coding=utf-8
+# coding=utf-8
 __author__ = 'Junior'
 import unittest
 
-from 登录与登出检查 import Logandlogout
-from 菜品作废理由设置 import test
-
+from loginandlogout import Logandlogout
+from setcancelreason import test
 
 
 def suite():
-    return unittest.makeSuite(Logandlogout,'test')
-def suite2():
-    return unittest.makeSuite(test,'test')
-if __name__=='__main__':
-    runner=unittest.TextTestRunner()
-    runner.run(suite())
-    # runner.run(suite2())
+    return unittest.makeSuite(Logandlogout, 'test')
 
+
+def suite2():
+    return unittest.makeSuite(test, 'test')
+
+
+if __name__ == '__main__':
+    runner = unittest.TextTestRunner()
+    runner.run(suite())
+    runner.run(suite2())
 
 '''import os
 caselist=os.listdir('D')
