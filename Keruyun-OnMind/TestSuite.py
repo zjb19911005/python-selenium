@@ -10,14 +10,14 @@ def suite():
     return unittest.makeSuite(Logandlogout, 'test')
 
 
-def suite2():
-    return unittest.makeSuite(test, 'test')
+# def suite2():
+#     return unittest.makeSuite(test, 'test')
 
 
 if __name__ == '__main__':
     runner = unittest.TextTestRunner()
     runner.run(suite())
-    runner.run(suite2())
+    # runner.run(suite2())
 
 '''import os
 caselist=os.listdir('D')
