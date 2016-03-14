@@ -28,7 +28,11 @@ class Logandlogout(unittest.TestCase):
         driver.find_element_by_id("captcha").send_keys("w")
         driver.find_element_by_name("submit1").click()
         driver.find_element_by_css_selector("li[title=\"admin\"]").click()
-        driver.find_element_by_id("logout").click()
+        try:
+            driver.find_element_by_id("logout").click()#假设退出这块出问题了
+        except:
+            driver.get_screenshot_as_file("/Users/Junior.Zhu/PycharmProjects/python-selenium/Keruyun-OnMind/logout.png")#然后就截图
+
         driver.find_element_by_link_text(u"确定").click()
         driver.find_element_by_id("username").clear()
         driver.find_element_by_id("username").send_keys("admin")
