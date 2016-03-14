@@ -8,9 +8,10 @@ import  urllib
 
 root =tk.Tk()
 # bm= tk.BitmapImage(file='D:\self.bmp')
-root.title('WEB自动化测试工具')
+root.wm_title('WEB自动化测试工具')
 
-tk.Label(root,fg = 'red',bg = 'blue',text = 'Hello I am Tkinter',width=30,height=20).pack()
+lable1= tk.Label(root,fg = 'red',bg = 'blue',text = 'Hello I am Tkinter',width=30,height=20)
+lable1.pack()
 tk.Label(root,fg = 'red',bg = '#FF00FF',text = 'Hello I am Tkinter').pack()
 def helloButton():
     print 'Hello world'
