@@ -27,4 +27,4 @@ for case in caselist:
     s = case.split('.')[1:][0]  # 选取后缀为py的文件,从.后面开始切片
     if s == 'py':
         # 此处执行dos命令并将结果保存到log.txt
-        os.system('/Users/Junior.Zhu/PycharmProjects/python-selenium/Keruyun-OnMind/%s 1>>log.txt 2>&1' % case)
+        os.system('/Users/Junior.Zhu/PycharmProjects/logs/%s 1>>log.txt 2>&1' % case)
