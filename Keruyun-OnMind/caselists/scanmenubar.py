@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-class Changecommercial(unittest.TestCase):
+class scanmenubar(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
@@ -15,7 +15,7 @@ class Changecommercial(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_changecommercial(self):
+    def test_(self):
         driver = self.driver
         driver.get(self.base_url + "/cas/login?service=http://testb.shishike.com/cas")
         driver.find_element_by_id("username").clear()
@@ -25,18 +25,23 @@ class Changecommercial(unittest.TestCase):
         driver.find_element_by_id("loginId").clear()
         driver.find_element_by_id("loginId").send_keys("4881")
         driver.find_element_by_id("captcha").clear()
-        driver.find_element_by_id("captcha").send_keys("ww")
+        driver.find_element_by_id("captcha").send_keys("w")
         driver.find_element_by_name("submit1").click()
-        driver.find_element_by_css_selector("div.user-info").click()
-        driver.find_element_by_id("changeCommercial").click()
-        driver.find_element_by_link_text(u"切换").click()
-        driver.find_element_by_css_selector("div.user-info").click()
-        driver.find_element_by_id("changeCommercial").click()
-        driver.find_element_by_link_text(u"切换").click()
-        driver.find_element_by_css_selector("div.user-info").click()
-        driver.find_element_by_id("changeCommercial").click()
-        driver.find_element_by_link_text(u"切换").click()
-        driver.find_element_by_css_selector("div.user-info").click()
+        driver.find_element_by_link_text(u"顾客").click()
+        driver.find_element_by_link_text(u"营销方案").click()
+        driver.find_element_by_link_text(u"优惠券模板").click()
+        driver.find_element_by_link_text(u"预订记录").click()
+        driver.find_element_by_link_text(u"订单管理").click()
+        driver.find_element_by_link_text(u"外卖订单").click()
+        driver.find_element_by_link_text(u"基础管理").click()
+        driver.find_element_by_link_text(u"仓库设定").click()
+        driver.find_element_by_link_text(u"采购管理").click()
+        driver.find_element_by_link_text(u"供应商类别设定").click()
+        driver.find_element_by_link_text(u"做法管理").click()
+        driver.find_element_by_link_text(u"营业报表").click()
+        driver.find_element_by_link_text(u"营业概况").click()
+        driver.find_element_by_link_text(u"操作日志").click()
+        driver.find_element_by_xpath("//div[@id='nav-fixed']/div/span/div/div/div[2]/ul").click()
         driver.find_element_by_id("logout").click()
         driver.find_element_by_link_text(u"确定").click()
         driver.find_element_by_id("username").clear()
