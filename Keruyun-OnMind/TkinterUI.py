@@ -6,8 +6,8 @@ import os
 from tkMessageBox import showinfo
 import TestSuite
 import  urllib
-
-
+import datetime
+import time
 tool = Tk()
 
 tool.wm_title('WEB自动化测试工具')
@@ -48,13 +48,13 @@ tool['menu']=menubar
 
 # def helloButton(event):
 #     global tool
-Label(tool,text='***********Python万岁**************').grid(row=0,sticky=W)
+Label(tool,text='***********Python万岁**************').grid(row=0,sticky=E)
 t=Label(tool,fg = 'black',bg='yellow',text = '这是一个用来做WEB自动化测试的工具')
 # t.bind('<Button-2>',helloButton)#Button-2模拟鼠标右键事件
 t.grid(row=1,sticky=W)
 
-Label(tool,fg='white',bg='blue',text="Python大法好,脚本语言牛逼哄哄的").grid(row=2,sticky=W)
-
+time=time.strftime("%Y-%m-%d %H:%M:%S")
+Label(tool,fg='white',bg='black',text='现在是北京时间:'+time).grid(row=3,column=0,sticky=W)
 # Button(tool,text='Hello button',command=helloButton,background='yellow').grid(row=3,sticky=W)
 
 
@@ -94,10 +94,9 @@ def secondwindows():
     tool.wm_withdraw()
     popup=Toplevel()
     Label(popup,text='测试弹窗').pack()
-    Button(popup,text='退回到上个窗口',command=firstwindows).pack()
+    Button(popup,text='退回到上个窗口').pack()
 
-def firstwindows():
-    tool.wm_withdraw()
+
 Button(tool,text='测试弹窗',command=secondwindows).grid(row=7,column=1,sticky=E)
 
 
