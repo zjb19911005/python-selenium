@@ -2,8 +2,8 @@
 __author__ = 'Junior'
 import unittest
 
-from loginandlogout import Logandlogout
-from setcancelreason import test
+from caselists.loginandlogout import Logandlogout
+from caselists.setcancelreason import test
 
 
 def suite():
@@ -19,9 +19,9 @@ if __name__ == '__main__':
     runner.run(suite())
     runner.run(suite2())
 
-'''import os
-caselist=os.listdir('D')
-for a in caselist:
-    s=a.split('.')[1:][0]#选取后缀为py的文件,从.后面开始切片
-    if s=='py':
-        os.system()'''
+# import os
+# caselist=os.listdir('D')
+# for a in caselist:
+#     s=a.split('.')[1:][0]#选取后缀为py的文件,从.后面开始切片
+#     if s=='py':
+#         os.system()'''
