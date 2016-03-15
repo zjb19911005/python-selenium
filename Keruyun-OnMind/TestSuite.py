@@ -2,8 +2,8 @@
 __author__ = 'Junior'
 import unittest
 
-from loginandlogout import Logandlogout
-from setcancelreason import test
+from caselists.loginandlogout import Logandlogout
+from caselists.setcancelreason import test
 
 
 def suite():
