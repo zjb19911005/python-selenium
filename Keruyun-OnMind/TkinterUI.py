@@ -5,50 +5,35 @@ import sys
 import os
 from tkMessageBox import showinfo
 from _tkinter import *
-import TestSuite
+# import TestSuite
 import  urllib
 import datetime
 import time
 import  urllib2
 from selenium import webdriver
-import TkinterDialog as dialog
-
 
 
 tool = Tk()
-
 tool.wm_title('测试自动化小工具集合')
 tool.resizable(width=False,height=False)
 tool.iconbitmap('Clouds.ico')
 tool.wm_attributes('-topmost',1)
-
-# tool.update()#刷新窗口,必须要做的事情
-# currentwidth=tool.winfo_reqwidth()#获取当前程序的宽
-# currentheight=tool.winfo_reqheight()#获取当前程序的高
-# scnWidth,scnHeight=tool.maxsize()#获取屏幕的最大尺寸
-# #开始计算位置
-# center='%dx%d+%d+%d' %(currentheight,currentwidth,(scnHeight-currentheight)/2,(scnWidth-currentwidth)/2)
-# tool.geometry(center)
-
-
+#开始配置窗口
 menubar=Menu(tool)
 fmenu=Menu(menubar)
 for item in ['新建','打开','保存','另存为','退出']:
      fmenu.add_command(label=item)
 fmenu.add_separator()
 
-
 emenu=Menu(menubar)
 for item in ['复制','粘贴','剪切','查找并替换']:
     emenu.add_command(label=item)
 emenu.add_separator()
 
-
 vmenu=Menu(menubar)
 for item in ['默认视图','Mac视图']:
     vmenu.add_command(label=item)
 vmenu.add_separator()
-
 
 amenu=Menu(menubar)
 for item in ['版权信息','其他说明']:
@@ -65,14 +50,9 @@ menubar.add_cascade(label='关于',menu=amenu)
 
 tool['menu']=menubar
 
-
-
-
 t=Label(tool,text='*******Python万岁,Python大法好*******',bg='yellow',fg='blue').grid(row=0,sticky=E)
-
-
-
 time=time.strftime("%Y-%m-%d %H:%M:%S")
+
 Label(tool,fg='white',bg='black',text='现在是北京时间:'+ time).grid(row=3,column=0,sticky=W)
 
 
@@ -110,7 +90,9 @@ def TOPlevel():
 Button(tool,text='权限验证',command=verify).grid(row=6,column=1,sticky=E)
 Button(tool,text='弹窗',command=Toplevel).grid(row=6,column=0,sticky=W)
 
-Button(tool,text='开始自动化测试',command=TestSuite).grid(row=7,column=0,sticky=E)
+def adbdevices():
+    os.popen('adb devices')
+Button(tool,text='调试设备',command=adbdevices).grid(row=7,column=0,sticky=E)
 
 
 

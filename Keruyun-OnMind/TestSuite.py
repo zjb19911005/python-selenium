@@ -9,9 +9,9 @@ import time
 if __name__ == '__main__':
     testunit=unittest.TestSuite()
     testunit.addTest(changepassword('test_'))
-    timestr = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+    times = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 
-filename ='D:\\result'+timestr+'.html'
+filename ='D:\\result'+times+'.html'
 fp=file(filename,'wb')
 runner=HTMLTestRunner.HTMLTestRunner(
 stream=fp,
