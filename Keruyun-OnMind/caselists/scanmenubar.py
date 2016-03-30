@@ -9,7 +9,7 @@ import unittest, time, re
 
 class scanmenubar(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.base_url = "http://testsso.shishike.com/"
         self.verificationErrors = []
