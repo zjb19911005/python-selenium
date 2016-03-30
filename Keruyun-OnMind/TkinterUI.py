@@ -82,19 +82,21 @@ def verify():
 
 
 
-def TOPlevel():
-    secondscreen=Toplevel(tool,title='我是第二窗口',widt=30,height=30).pack()
-    Label(secondscreen,text="我是来搞笑的").pack()
+def Dialog():
+    d =Dialog(None,title='测试',text='wwaaaaaaa',default = 0,strings=('不满意','还可以'))
+    print d.num
+
 
 
 Button(tool,text='权限验证',command=verify).grid(row=6,column=1,sticky=E)
-Button(tool,text='弹窗',command=Toplevel).grid(row=6,column=0,sticky=W)
+Button(tool,text='弹窗',command=Dialog).grid(row=6,column=0,sticky=W)
 
 def adbdevices():
-    os.popen('adb devices')
+    adb=os.popen('adb devices')
+
 Button(tool,text='调试设备',command=adbdevices).grid(row=7,column=0,sticky=E)
 
-
+Text(tool,width=50,height=30).grid(row=9,column=1,sticky=N)
 
 Button(tool,text='退出程序',command=tool.quit).grid(row=8,column=0,sticky=E)
 
