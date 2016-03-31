@@ -3,6 +3,7 @@
 from Tkinter import *
 import sys
 import os
+from tkFileDialog import askopenfilename
 from tkMessageBox import showinfo
 from _tkinter import *
 # import TestSuite
@@ -11,6 +12,8 @@ import datetime
 import time
 import  urllib2
 from selenium import webdriver
+from SimpleDialog import *
+from tkMessageBox import *
 
 
 tool = Tk()
@@ -36,9 +39,9 @@ for item in ['默认视图','Mac视图']:
 vmenu.add_separator()
 
 amenu=Menu(menubar)
-for item in ['版权信息','其他说明']:
+for item in ['其他说明']:
   amenu.add_command(label=item)
-amenu.add_separator()
+  amenu.add_separator()
 def version():
     showinfo(title='版权信息',message='客如云测试部')
 amenu.add_command(label='版权信息',command=version)
@@ -55,13 +58,9 @@ time=time.strftime("%Y-%m-%d %H:%M:%S")
 
 Label(tool,fg='white',bg='black',text='现在是北京时间:'+ time).grid(row=3,column=0,sticky=W)
 
-
-
-
 Label(tool,text='账号:').grid(row=4,sticky=W)
 account=Entry(tool,textvariable='请输入账户')
 account.grid(row=4,column=1,sticky=E)
-
 
 Label(tool,text='密码:').grid(row=5,sticky=W)
 password=Entry(tool,show='*')
@@ -71,32 +70,34 @@ def verify():
      s2=password.get()
      t1=len(s1)
      t2=len(s2)
-     if s1=='kry888' and s2=='a123456':
-         Label(tool,text='验证成功').grid(row=6,column=0,sticky=W)
-         text=os.popen('adb devices')
-         # Text(tool,width=50,height=30).pack()
+     if s1=='123' and s2=='456':
+         Label(tool,text='验证成功').grid(row=3,column=1,sticky=W)
+
      else:
-         Label(tool,text='抱歉,用户名或者密码错误').grid(row=6,column=0,sticky=W)
+         Label(tool,text='抱歉,用户名或者密码错误').grid(row=3,column=1,sticky=W)
          account.delete(0,t1)
          password.delete(0,t2)
 
 
 
-def Dialog():
-    d =Dialog(None,title='测试',text='wwaaaaaaa',default = 0,strings=('不满意','还可以'))
-    print d.num
 
+def openfile(message=None):
+     openfilename= askopenfilename(filetypes=[('apk','*.apk')])
+     try:
 
+         os.system('adb install -r'+path+openfilename)
+     except:
+         print('Could not open File:%s'%openfilename)
 
 Button(tool,text='权限验证',command=verify).grid(row=6,column=1,sticky=E)
-Button(tool,text='弹窗',command=Dialog).grid(row=6,column=0,sticky=W)
+Button(tool,text='弹窗',command=openfile).grid(row=6,column=0,sticky=W)
 
 def adbdevices():
-    adb=os.popen('adb devices')
+    text=os.system('adb devices')
+    showinfo(title='设备列表',message=text)
 
 Button(tool,text='调试设备',command=adbdevices).grid(row=7,column=0,sticky=E)
 
-Text(tool,width=50,height=30).grid(row=9,column=1,sticky=N)
 
 Button(tool,text='退出程序',command=tool.quit).grid(row=8,column=0,sticky=E)
 
